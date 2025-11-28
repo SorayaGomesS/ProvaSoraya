@@ -1,5 +1,5 @@
 Flask
-Flask-Bootstrap
+Flask-Bootstrap5
 Flask-Moment
 Flask-WTF
 Flask-SQLAlchemy
