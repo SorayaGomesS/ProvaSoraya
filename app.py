@@ -67,8 +67,7 @@ def nao_disponivel():
     return render_template('nao_disponivel.html'), 200
 
 # Cria o DB se não existir
-@app.before_first_request
-def create_tables():
+with app.app_context():
     db.create_all()
 
 if __name__ == "__main__":
