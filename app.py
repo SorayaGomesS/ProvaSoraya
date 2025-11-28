@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from flask_bootstrap import Bootstrap
+from flask_bootstrap import Bootstrap5
 from flask_moment import Moment
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField
