@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Cadastro de Cursos</h2>
+
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.nome.label }} {{ form.nome(class="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ form.descricao.label }} {{ form.descricao(class="form-control", rows=3) }}
+    </div>
+    {{ form.submit(class="btn btn-primary mt-2") }}
+  </form>
+
+  <hr>
+  <h3>Relação de cursos cadastrados</h3>
+  <table class="table">
+    <thead>
+      <tr><th>Curso</th><th>Descrição</th></tr>
+    </thead>
+    <tbody>
+      {% for c in cursos %}
+      <tr>
+        <td>{{ c.nome }}</td>
+        <td>{{ c.descricao }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
