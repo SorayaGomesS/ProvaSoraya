@@ -67,12 +67,9 @@ def nao_disponivel():
     return render_template('nao_disponivel.html'), 200
 
 # Cria o DB se não existir
-@app.before_request
-def create_db_once():
-    if not hasattr(app, "db_created"):
-        db.create_all()
-        app.db_created = True
-
+@app.before_first_request
+def create_tables():
+    db.create_all()
 
 if __name__ == "__main__":
     app.run(debug=True)
